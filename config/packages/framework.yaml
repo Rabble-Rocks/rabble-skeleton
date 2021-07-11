@@ -1,0 +1,13 @@
+framework:
+    secret: '%env(APP_SECRET)%'
+    session:
+        enabled: true
+        handler_id: 'session.handler.native_file'
+        save_path: '%kernel.project_dir%/var/sessions/%kernel.environment%'
+        cookie_secure: auto
+        cookie_samesite: lax
+    php_errors:
+        log: true
+services:
+    Psr\Container\ContainerInterface:
+        alias: service_container

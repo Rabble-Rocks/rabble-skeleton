@@ -1,0 +1,2 @@
+rabble_website:
+  localization_strategy: path # path|domain

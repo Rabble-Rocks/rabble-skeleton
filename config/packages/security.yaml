@@ -1,0 +1,33 @@
+security:
+    always_authenticate_before_granting: true
+    providers:
+        users:
+            entity:
+                class: Rabble\UserBundle\Entity\User
+                property: username
+    encoders:
+        Rabble\UserBundle\Entity\User:
+            algorithm: auto
+    firewalls:
+        dev:
+            pattern: ^/(_(profiler|wdt)|css|images|js)/
+            security: false
+        admin:
+            anonymous: true
+            lazy: true
+            pattern: ^/admin
+            guard:
+                authenticators:
+                    - Rabble\UserBundle\Security\AdminAuthenticator
+            remember_me:
+                secret:   '%kernel.secret%'
+                lifetime: 604800
+                path:     /admin
+            logout:
+                path: rabble_admin_auth_logout
+                target: rabble_admin_auth_login
+            provider: users
+
+    access_control:
+        - { path: ^/admin/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/admin, roles: ROLE_RABBLE_ADMIN }

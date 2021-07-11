@@ -1,0 +1,13 @@
+ongr_elasticsearch:
+  analysis:
+    analyzer:
+      case_insensitive:
+        type: custom
+        tokenizer: keyword
+        filter:
+          - lowercase
+  indexes:
+    Rabble\ContentBundle\Persistence\Document\ContentDocument:
+      hosts: ['%env(resolve:ELASTICSEARCH_URL)%']
+    Rabble\SnippetBundle\Document\Snippet:
+      hosts: ['%env(resolve:ELASTICSEARCH_URL)%']

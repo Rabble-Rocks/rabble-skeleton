@@ -1,0 +1,6 @@
+rabble_menu:
+  menus:
+    -
+      name: main
+      attributes:
+        label_en: Main menu

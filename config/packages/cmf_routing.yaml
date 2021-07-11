@@ -1,0 +1,5 @@
+cmf_routing:
+  chain:
+    routers_by_id:
+      router.default: 200
+      rabble_website.router: 100

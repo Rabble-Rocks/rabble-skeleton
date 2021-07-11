@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html lang="{{ app.request.locale }}">
+<head>
+    <meta charset="utf-8">
+    <title>{{ content.title|default('Rabble') }}</title>
+    {{ rabble_meta(content) }}
+</head>
+<body>
+    {% block content %}{% endblock %}
+</body>
+</html>

@@ -1,0 +1,17 @@
+rabble_content:
+  content_types:
+    -
+      name: page
+      attributes:
+        icon: fa fa-file-text
+        icon_color: purple-300
+        label_en: Page
+        route_defaults:
+          _controller: 'Rabble\WebsiteBundle\Controller\DefaultController::indexAction'
+          _template: 'page/page.html.twig'
+      fields:
+        -
+          name: text
+          type: string
+          label: Example field
+          required: false

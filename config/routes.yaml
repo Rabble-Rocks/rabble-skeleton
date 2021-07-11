@@ -1,0 +1,4 @@
+rabble_admin:
+  resource: .
+  prefix: /admin
+  type: rabble_admin

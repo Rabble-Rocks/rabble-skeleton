@@ -1,0 +1,16 @@
+doctrine_phpcr:
+    session:
+        backend:
+            type: doctrinedbal
+            caches:
+                meta: doctrine.cache.adapter.apcu
+                nodes: doctrine.cache.adapter.apcu
+            # enable logging
+            # logging: true
+            # enable profiling in the debug toolbar.
+            # profiling: true
+        workspace: '%env(PHPCR_WORKSPACE)%'
+
+services:
+    doctrine.cache.adapter.apcu:
+        class: Doctrine\Common\Cache\ApcuCache

@@ -1,0 +1,3 @@
+imports:
+  -
+    resource: ./content_types/**/*.{yaml,yml}

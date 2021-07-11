@@ -1,0 +1,26 @@
+# Local files
+/adminator/node_modules/
+/public/uploads/*
+!/public/uploads/.gitignore
+
+# Symfony
+/.env.local
+/.env.local.php
+/.env.*.local
+/config/secrets/prod/prod.decrypt.private.php
+/public/bundles/
+/var/
+
+# Composer
+/vendor/
+composer.lock
+symfony.lock
+
+# PHPUnit
+.phpunit
+.phpunit.result.cache
+/phpunit.xml
+
+###> liip/imagine-bundle ###
+/public/media/cache/
+###< liip/imagine-bundle ###
