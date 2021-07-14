@@ -4,11 +4,11 @@
   "private": true,
   "description": "HTML Admin Template",
   "scripts": {
-    "clean": "../node_modules/.bin/shx rm -rf ../public/admin/build",
-    "build": "npm run clean && ../node_modules/.bin/cross-env NODE_ENV=\\\"production\\\" webpack",
-    "dev": "npm run clean && ../node_modules/.bin/webpack",
-    "lint:js": "../node_modules/.bin/eslint ./src ./webpack ./*.js -f table --ext .js --ext .jsx",
-    "lint:scss": "../node_modules/.bin/stylelint ./src/**/*.scss --syntax scss",
+    "clean": "./node_modules/.bin/shx rm -rf ../public/admin/build",
+    "build": "npm run clean && ./node_modules/.bin/cross-env NODE_ENV=\\\"production\\\" webpack",
+    "dev": "npm run clean && ./node_modules/.bin/webpack",
+    "lint:js": "./node_modules/.bin/eslint ./src ./webpack ./*.js -f table --ext .js --ext .jsx",
+    "lint:scss": "./node_modules/.bin/stylelint ./src/**/*.scss --syntax scss",
     "lint": "npm run lint:js && npm run lint:scss"
   },
   "devDependencies": {
