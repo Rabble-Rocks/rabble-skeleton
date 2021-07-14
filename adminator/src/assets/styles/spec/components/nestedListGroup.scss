@@ -1,0 +1,8 @@
+.list-group {
+  & > .nested > .list-group {
+    margin-left: 15px;
+  }
+  &.sortable {
+    padding-top: 10px;
+  }
+}

@@ -1,4 +1,5 @@
 ongr_elasticsearch:
+  source_directories: [/src/Document]
   analysis:
     analyzer:
       case_insensitive:
