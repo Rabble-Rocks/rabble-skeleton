@@ -16,8 +16,8 @@
 // ---------------------
 
 const
-  manifest          = require('../manifest'),
-  ExtractTextPlugin = require('extract-text-webpack-plugin');
+    manifest          = require('../manifest'),
+    ExtractTextPlugin = require('mini-css-extract-plugin');
 
 
 // ---------------
@@ -31,7 +31,8 @@ const loaders = [
     loader: 'css-loader',
     options: {
       sourceMap : manifest.IS_DEVELOPMENT,
-      minimize  : manifest.IS_PRODUCTION,
+      // minimize  : manifest.IS_PRODUCTION,
+      importLoaders: 1,
     },
   },
 ];
@@ -44,9 +45,9 @@ const loaders = [
 if (manifest.IS_PRODUCTION) {
   rule = {
     test: /\.css$/,
-    loader: ExtractTextPlugin.extract({
-      use: loaders,
-    }),
+    use: [{
+      loader: 'style-loader',
+    }].concat(loaders),
   };
 }
 

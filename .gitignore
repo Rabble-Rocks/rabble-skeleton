@@ -2,6 +2,7 @@
 /adminator/node_modules/
 /public/uploads/*
 !/public/uploads/.gitignore
+adminator/bundles.json
 
 # Symfony
 /.env.local

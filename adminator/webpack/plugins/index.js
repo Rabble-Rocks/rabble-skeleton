@@ -1,14 +1,10 @@
-const
-  manifest          = require('../manifest');
+const manifest = require('../manifest');
 
 const plugins = [];
 
 plugins.push(
-  require('./imageminPlugin'),
   ...(require('./internal')),
-  require('./caseSensitivePlugin'),
-  require('./extractPlugin'),
-  require('./copyPlugin')
+  require('./extractPlugin')
 );
 
 if (manifest.IS_DEVELOPMENT) {
