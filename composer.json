@@ -113,7 +113,8 @@
             "@auto-scripts"
         ],
         "post-create-project-cmd": [
-            "@php -r \"file_put_contents('.gitignore', str_replace(['composer.lock' . PHP_EOL, 'symfony.lock' . PHP_EOL], ['', ''], file_get_contents('.gitignore')));\""
+            "@php -r \"file_put_contents('.gitignore', str_replace(['composer.lock' . PHP_EOL, 'symfony.lock' . PHP_EOL], ['', ''], file_get_contents('.gitignore')));\"",
+            "@php -r \"copy('.env.dist', '.env.local');\""
         ]
     },
     "conflict": {
