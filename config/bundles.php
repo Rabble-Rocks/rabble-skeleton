@@ -27,6 +27,8 @@ return [
     Rabble\MenuBundle\RabbleMenuBundle::class => ['all' => true],
     Rabble\SeoBundle\RabbleSeoBundle::class => ['all' => true],
     Rabble\WebsiteBundle\RabbleWebsiteBundle::class => ['all' => true],
+    Rabble\PreviewBundle\RabblePreviewBundle::class => ['all' => true],
+    FOS\JsRoutingBundle\FOSJsRoutingBundle::class => ['all' => true],
     Eschmar\TimeAgoBundle\EschmarTimeAgoBundle::class => ['all' => true],
     Rabble\ContentBundle\RabbleContentBundle::class => ['all' => true],
     Twig\Extra\TwigExtraBundle\TwigExtraBundle::class => ['all' => true],

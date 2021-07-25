@@ -37,6 +37,7 @@
         "rabble/snippet-bundle": "1.0.x-dev",
         "rabble/user-bundle": "1.0.x-dev",
         "rabble/website-bundle": "1.0.x-dev",
+        "rabble/preview-bundle": "1.0.x-dev",
         "stof/doctrine-extensions-bundle": "^1.4",
         "symfony/asset": "^5",
         "symfony/console": "^5",
