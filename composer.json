@@ -108,14 +108,15 @@
             "assets:install %PUBLIC_DIR%": "symfony-cmd"
         },
         "post-install-cmd": [
+            "@php -r 'if(!file_exists(\".env.local\")) {copy(\".env.dist\", \".env.local\");}'",
             "@auto-scripts"
         ],
         "post-update-cmd": [
+            "@php -r 'if(!file_exists(\".env.local\")) {copy(\".env.dist\", \".env.local\");}'",
             "@auto-scripts"
         ],
         "post-create-project-cmd": [
-            "@php -r \"file_put_contents('.gitignore', str_replace(['composer.lock' . PHP_EOL, 'symfony.lock' . PHP_EOL], ['', ''], file_get_contents('.gitignore')));\"",
-            "@php -r \"copy('.env.dist', '.env.local');\""
+            "@php -r 'file_put_contents(\".gitignore\", str_replace([\"composer.lock\" . PHP_EOL, \"symfony.lock\" . PHP_EOL], [\"\", \"\"], file_get_contents(\".gitignore\")));'"
         ]
     },
     "conflict": {
