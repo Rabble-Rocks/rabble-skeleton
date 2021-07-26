@@ -1,3 +1,5 @@
 imports:
   -
     resource: ./content_types/**/*.{yaml,yml}
+rabble_content:
+  index_prefix: '%env(ELASTICSEARCH_INDEX_PREFIX)%'
