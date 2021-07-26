@@ -3,8 +3,8 @@ doctrine_phpcr:
         backend:
             type: doctrinedbal
             caches:
-                meta: doctrine.cache.adapter.apcu
-                nodes: doctrine.cache.adapter.apcu
+                meta: doctrine.phpcr.cache.metadata
+                nodes: doctrine.phpcr.cache.result
             # enable logging
             # logging: true
             # enable profiling in the debug toolbar.
@@ -12,5 +12,13 @@ doctrine_phpcr:
         workspace: '%env(PHPCR_WORKSPACE)%'
 
 services:
-    doctrine.cache.adapter.apcu:
-        class: Doctrine\Common\Cache\ApcuCache
+    doctrine.phpcr.cache.metadata:
+        class: Doctrine\Common\Cache\Psr6\DoctrineProvider
+        factory: ['Doctrine\Common\Cache\Psr6\DoctrineProvider', 'wrap']
+        arguments:
+            - '@doctrine.metadata_cache_pool'
+    doctrine.phpcr.cache.result:
+        class: Doctrine\Common\Cache\Psr6\DoctrineProvider
+        factory: ['Doctrine\Common\Cache\Psr6\DoctrineProvider', 'wrap']
+        arguments:
+            - '@doctrine.result_cache_pool'
