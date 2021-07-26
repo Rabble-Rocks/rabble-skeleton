@@ -2,11 +2,11 @@ framework:
     cache:
         pools:
             doctrine.query_cache_pool:
-                adapter: cache.adapter.filesystem
+                adapter: cache.adapter.apcu
             doctrine.result_cache_pool:
-                adapter: cache.adapter.filesystem
+                adapter: cache.adapter.apcu
             doctrine.metadata_cache_pool:
-                adapter: cache.adapter.filesystem
+                adapter: cache.adapter.apcu
 
 doctrine:
     dbal:
