@@ -119,7 +119,8 @@
         ]
     },
     "conflict": {
-        "symfony/symfony": "*"
+        "symfony/symfony": "*",
+        "symfony/web-profiler-bundle": "5.3.4"
     },
     "extra": {
         "symfony": {
