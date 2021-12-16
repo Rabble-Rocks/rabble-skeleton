@@ -1,0 +1,16 @@
+dh_auditor:
+    timezone: 'Europe/Amsterdam'
+    enabled: true
+    providers:
+        doctrine:
+            entities:
+                Rabble\UserBundle\Entity\User:
+                    ignored_columns:
+                        - password
+                        - image.name
+                        - image.originalName
+                        - image.size
+                        - image.mimeType
+                        - image.dimensions
+                        - createdAt
+                        - updatedAt

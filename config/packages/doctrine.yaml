@@ -1,30 +1,24 @@
 framework:
     cache:
         pools:
-            doctrine.query_cache_pool:
-                adapter: cache.adapter.apcu
-            doctrine.result_cache_pool:
-                adapter: cache.adapter.apcu
-            doctrine.metadata_cache_pool:
-                adapter: cache.adapter.apcu
+            doctrine.app_cache_pool:
+                adapter: cache.app
+            doctrine.system_cache_pool:
+                adapter: cache.system
 
 doctrine:
     dbal:
         url: '%env(resolve:DATABASE_URL)%'
-        server_version: '%env(resolve:DATABASE_VERSION)%'
     orm:
         auto_generate_proxy_classes: true
         naming_strategy: doctrine.orm.naming_strategy.underscore_number_aware
         auto_mapping: false
         metadata_cache_driver:
             type: pool
-            pool: doctrine.metadata_cache_pool
-        query_cache_driver:
-            type: pool
-            pool: doctrine.query_cache_pool
+            pool: doctrine.system_cache_pool
         result_cache_driver:
             type: pool
-            pool: doctrine.result_cache_pool
+            pool: doctrine.app_cache_pool
         mappings:
             App:
                 is_bundle: false
@@ -33,4 +27,8 @@ doctrine:
                 prefix: 'App\Entity'
                 alias: App
             RabbleUserBundle: xml
-            VichUploaderBundle: annotation
+            VichUploaderBundle:
+                is_bundle: true
+                type: annotation
+                dir: 'src/Entity'
+                prefix: 'Vich\UploaderBundle\Entity'

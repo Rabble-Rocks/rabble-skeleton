@@ -81,7 +81,11 @@
         "platform": {
             "php": "7.4.0"
         },
-        "sort-packages": true
+        "sort-packages": true,
+        "allow-plugins": {
+            "composer/package-versions-deprecated": true,
+            "symfony/flex": true
+        }
     },
     "autoload": {
         "psr-4": {
@@ -120,8 +124,7 @@
         ]
     },
     "conflict": {
-        "symfony/symfony": "*",
-        "symfony/web-profiler-bundle": "5.3.4"
+        "symfony/symfony": "*"
     },
     "extra": {
         "symfony": {

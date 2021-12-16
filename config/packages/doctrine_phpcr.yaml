@@ -16,9 +16,9 @@ services:
         class: Doctrine\Common\Cache\Psr6\DoctrineProvider
         factory: ['Doctrine\Common\Cache\Psr6\DoctrineProvider', 'wrap']
         arguments:
-            - '@doctrine.metadata_cache_pool'
+            - '@doctrine.app_cache_pool'
     doctrine.phpcr.cache.result:
         class: Doctrine\Common\Cache\Psr6\DoctrineProvider
         factory: ['Doctrine\Common\Cache\Psr6\DoctrineProvider', 'wrap']
         arguments:
-            - '@doctrine.result_cache_pool'
+            - '@doctrine.app_cache_pool'
